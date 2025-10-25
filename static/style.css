@@ -1,0 +1,504 @@
+/* HTML を表示するときのレイアウトやデザインを指定する */
+input[type="file"] {
+  display: none !important; /* ファイル選択ボタンを非表示にする */
+}
+
+body.basic-page{
+    background-image: url("/background.jpeg"); /* 画像へのパス */
+    background-size: cover; /* 画像を要素全体に表示 */
+    background-repeat: no-repeat; /* 画像を繰り返さない */
+}
+
+body.sunny-page{
+    background-image: url("/sunny.jpeg"); /* 画像へのパス */
+    background-size: cover; /* 画像を要素全体に表示 */
+    background-repeat: no-repeat; /* 画像を繰り返さない */
+}
+
+body.rainy-page{
+    background-image: url("/rainy.jpeg"); /* 画像へのパス */
+    background-size: cover; /* 画像を要素全体に表示 */
+    background-repeat: no-repeat; /* 画像を繰り返さない */
+    opacity: 0.9;
+}
+
+body.rainy-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* 透明度50%の白色 */
+    z-index: -1; /* 背景画像より下に配置 */
+}
+
+h1 {
+  position: relative;
+  background: #dfefff;
+  box-shadow: 0px 0px 0px 5px #dfefff;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+}
+
+h1:after {
+  position: absolute;
+  content: '';
+  left: -7px;
+  top: -7px;
+  border-width: 0 0 15px 15px;
+  border-style: solid;
+  border-color: #fff #fff #a8d4ff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* 横方向中央寄せ */
+    justify-content: center; /* 縦方向中央寄せ（必要なら） */
+    min-height: 100vh;      /* 画面全体の高さに合わせる */
+
+}
+
+.container p{
+  padding: 10px;
+  margin:0;
+}
+
+.container .title{
+  border: 5px double #ffffff;
+  background-color: rgba(173, 216, 230, 0.5);
+  box-shadow: 0 0 0 6px #ffffff;
+  font-size: 78px;
+  text-align: center;
+  font-family:  "MS P明朝", serif;
+  font-weight: bold;
+  color: #fff;
+  margin: 20px auto;
+  display: inline-block;   
+  padding: 0.4em 1.2em;    
+  max-width: 90vw;         
+  box-sizing: border-box;
+}
+
+.circle-text1 {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 30px 50px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(0, 0, 255, 0.2)); /* 白から薄い青へのグラデーション */
+  border: 2px solid #ccc;
+  font-size: 20px;
+  text-align: center;
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 135px;
+}
+
+.square-text1 {
+  display: inline-block;
+  padding: 30px 50px;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(173, 216, 230, 1.0));
+  border: 2px solid #ccc;
+  font-size: 25px;
+  border-radius: 5px;
+  left: -5px;
+  position: relative; /* 要素を相対配置にする */
+  top: 20px; /* 上に 20px 移動 */
+  left: -10px; /* 左に 10px 移動 */
+}
+
+.square-text2 {
+  display: inline-block;
+  padding: 30px 50px;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(255, 165, 0, 1.0));
+  border: 2px solid #ccc;
+  font-size: 25px;
+  border-radius: 5px;
+  position: relative; /* 要素を相対配置にする */
+  top: 20px; /* 上に 20px 移動 */
+  left: -10px; /* 左に 10px 移動 */
+}
+
+.square-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 135px;
+}
+
+.imageBox {
+  margin: auto;
+  display: block;
+  width: 50%;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+.imageTitle {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background: white;
+  width: 50%; /* 例：幅を50%にする */
+  border: solid black 1px;
+}
+
+.imageBox button {
+  font-size: 18px; /* フォントサイズを大きくする */
+  padding: 5px 50px; /* パディングを大きくする */
+  display: inline-block;
+  border-radius: 5px; /* 角を丸くする */
+}
+
+/* ホバー時のスタイル */
+.imageBox button:hover {
+  background-color: #0056b3; /* 背景色を少し濃くする */
+}
+
+/*ボタン*/
+
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+a.btn-malformation {
+  font-size: 2rem;
+
+  padding: 3rem 4rem;
+
+  color: #fff;
+  border-radius: 100% 80px / 80px 100%;
+  background-color: #eb6100;
+}
+
+a.btn-malformation:hover {
+  color: #fff;
+  border-radius: 60% 80% / 100% 80%;
+}
+
+a.btn-malformation {
+  font-size: 2rem;
+
+  padding: 3rem 4rem;
+
+  color: #ff4500;
+  border-radius: 100% 80px / 80px 100%;
+}
+
+a.btn-malformation:hover {
+  color: #ffcc99;
+  border-radius: 60% 80% / 100% 80%;
+}
+
+.btn-malformation--pastel1{
+  background: #fca1a1;
+  background: -webkit-linear-gradient(-45deg, #fca1a1 40%, #fcfc5d 100%);
+  background: -webkit-linear-gradient(315deg, #fca1a1 40%, #fcfc5d 100%);
+  background: linear-gradient(135deg, #CCFFFF 40%, #00FFFF 100%);
+   -webkit-box-shadow: 30px 10px 0 #e0ffff; /* 薄い水色 */
+  box-shadow: 30px 10px 0 #e0ffff; /* 薄い水色 */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fca1a1', endColorstr='#fcfc5d', GradientType=1);
+}
+
+.upload-btn {
+  background: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 20px;
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  max-width: 250px;
+  padding: 10px 20px;
+  margin: 20px auto;
+  text-align: center;
+}
+.upload-btn.grad {
+  background: linear-gradient(90deg,  #007bff 0%, #00bfff 50%, #00ffff 100%);
+  background-size: 200% 100%;
+  border: none;
+  transition: background-position 0.5s ease-in-out; /* 0.5秒かけてゆっくりと変化 */
+}
+.upload-btn.grad:hover {
+  background-position: 100% 0;
+}
+/* loadingクラスがついた要素にアニメーションを追加 */
+.upload-btn.grad.loading {
+  animation: gradientAnimation 2s linear infinite; /* アニメーションの設定 */
+}
+
+/* グラデーションアニメーション */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.c-btn1 {
+  background: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 60px;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  max-width: 200px;
+  padding: 10px 20px;
+  text-align: center;
+  position: relative;
+  top: 60px;
+}
+.c-btn1.grad {
+  background: linear-gradient(90deg,  #007bff 0%, #00bfff 50%, #00ffff 100%);
+  background-size: 200% 100%;
+  border: none;
+  transition: background-position 0.5s ease-in-out; /* 0.5秒かけてゆっくりと変化 */
+}
+.c-btn1.grad:hover {
+  background-position: 100% 0;
+}
+
+.c-btn2 {
+  background: #ff00ff;
+  border: 2px solid  #ff00ff;
+  border-radius: 60px;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  max-width: 200px;
+  padding: 10px 20px;
+  text-align: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: 0;
+}
+.c-btn2.grad {
+  background: linear-gradient(90deg, #ff00ff 0%, #ff5def 50%, #fce7fa 100%);
+  background-size: 200% 100%;
+  border: none;
+  transition: background-position 0.5s ease-in-out; /* 0.5秒かけてゆっくりと変化 */
+}
+.c-btn2.grad:hover {
+  background-position: 100% 0;
+}
+
+.c-btn3 {
+  background: #ff0000; /* 背景色を赤に変更 */
+  border: 2px solid  #ff0000; /* ボーダー色を赤に変更 */
+  border-radius: 60px;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  max-width: 200px;
+  padding: 10px 20px;
+  text-align: center;
+  position: relative;
+  margin: 40px auto 0 auto;
+}
+.c-btn3.grad {
+  background: linear-gradient(90deg, #ff0000 0%, #ff8000 50%, #ffff00 100%); /* グラデーションを赤系に変更 */
+  background-size: 200% 100%;
+  border: none;
+  transition: background-position 0.5s ease-in-out; /* 0.5秒かけてゆっくりと変化 */
+}
+.c-btn3.grad:hover {
+  background-position: 100% 0;
+}
+.c-btn4 {
+  background: #000000;
+  border: 2px solid  #000000;
+  border-radius: 60px;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  max-width: 200px;
+  padding: 10px 20px;
+  text-align: center;
+}
+.c-btn4.grad {
+  background: linear-gradient(90deg, #000000 0%, #800000 50%, #ff0000 100%); /* グラデーションを赤系に変更 */
+  background-size: 200% 100%;
+  border: none;
+  transition: background-position 0.5s ease-in-out; /* 0.5秒かけてゆっくりと変化 */
+}
+.c-btn4.grad:hover {
+  background-position: 100% 0;
+}
+.c-btn5 {
+  background: #008000;
+  border: 2px solid  #008000;
+  border-radius: 60px;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  max-width: 200px;
+  padding: 10px 20px;
+  text-align: center;
+  position: relative;
+  top: 60px;
+}
+.c-btn5.grad {
+  background: linear-gradient(90deg, #008000 0%, #00ff00 50%, #90ee90 100%); /* グラデーションを赤系に変更 */
+  background-size: 200% 100%;
+  border: none;
+  transition: background-position 0.5s ease-in-out; /* 0.5秒かけてゆっくりと変化 */
+}
+.c-btn5.grad:hover {
+  background-position: 100% 0;
+}
+
+.file-button{
+  /* 「選択されていません（選択後はファイル名）」のスタイル */
+  font-size: 10px;
+}
+
+.file-button::file-selector-button {
+   /* 「ファイルを選択」ボタンのスタイル */
+  font-weight: bold;
+  color: #ff4500;
+  background: #ccffff;
+  font-size: 14px;
+  border: 0;
+  border-radius: 10em;
+  padding: 8px 16px;
+  text-align: center;
+}
+
+.sunny-page .imageBox img {
+  /* ここに画像の位置調整のためのスタイルを追加 */
+  display: block; /* ブロックレベル要素として表示 */
+  margin: 0 auto; /* 左右に自動マージンを設定して中央揃え */
+  max-width: 100%; /* 画像の最大幅を100%に設定 */
+  height: auto; /* 高さを自動調整 */
+}
+
+.rainy-page .imageBox img {
+  /* ここに画像の位置調整のためのスタイルを追加 */
+  display: block; /* ブロックレベル要素として表示 */
+  margin: 0 auto; /* 左右に自動マージンを設定して中央揃え */
+  max-width: 100%; /* 画像の最大幅を100%に設定 */
+  height: auto; /* 高さを自動調整 */
+}
+
+
+#drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    width: 600px;
+    height: 300px;
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明の白 */
+    backdrop-filter: blur(10px); /* ぼかしフィルター */
+}
+#drop-area p{
+  background: linear-gradient(180deg, #00008B 0%, #008080 72%, #00CED1 100%); /* グラデーションの色を変更 */
+  background: -webkit-linear-gradient(-90deg, #00008B 0%, #008080 72%, #00CED1 100%); /* グラデーションの色を変更 */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 24px; /* 文字サイズを24pxに設定 */
+}
+#drop-area.highlight {
+    border-color: purple;
+}
+#drop-area .my-form {
+  margin-top: 50px; /* 上に50pxの余白を追加 */
+}
+
+#drop-image {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    position: absolute;
+    top: 0px;
+    left: 650px;
+    width: 200px;
+    height: 350px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* 半透明の白 */
+    backdrop-filter: blur(10px); /* ぼかしフィルター */
+}
+
+p {
+    margin-top: 0;
+}
+.my-form {
+    margin-bottom: 10px;
+}
+
+#gallery {
+  position: absolute; /* #gallery を絶対配置にする */
+  top: 20px; /* 上からの位置を指定 */
+  left: 665px;  /* 左からの位置を指定 */
+}
+
+#gallery img {
+    width: 175px;
+    height: 60px;
+    object-fit: cover; /* 画像のアスペクト比を維持しながら、指定されたサイズに収める */
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+#gallery button {
+  display: block;
+  margin: 5px auto; /* 上下に5px、左右にautoのマージンを追加 */
+  width: 50px; /* ボタンの幅を指定 */
+  text-align: center;
+  position: relative; /* 相対位置指定 */
+  top: -10px;
+  left: -5px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 18px; /* フォントサイズを大きくする */
+    margin-top: 20px; /* 上にマージンを追加 */
+}
+.button:hover {
+    background: #ddd;
+}
+
+#fileElem {
+    display: none;
+}

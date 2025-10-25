@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <link href="/static/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body class="basic-page" style="background-image: url('/static/images/background.jpeg');">
+    <h1>画像一覧</h1>
+    <div class="c-btn4 grad" onclick="deleteAllImages()">全て削除</div>
+    <div id="image-container">
+    {% for img in imglst %}
+      <div class="imageBox" id="imageBox_{{ img.filename }}">
+        <p>
+        　<div class="imageTitle">
+            {{ img.classname }} ({{ img.score|round(2) }}%)<br>
+            ファイル名:<a href="image/{{ img.filename }}">{{ img.filename }}
+          </div>
+            <img src="/static/{{ img.filename }}" width="100%"></a>
+        </p>
+      <div class="c-btn3 grad" onclick="if (confirm('{{ img.filename }} を削除しますか？')) { deleteImage('{{ img.filename }}'); }">削除</div>
+      </div>
+    </div>
+    {% endfor %}
+    <p><a href="/upload.html" class="c-btn2 grad">アップロードページに戻る</a></p>
+
+    <script src="/static/list.js"></script>
+  </body>
+</html>
