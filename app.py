@@ -76,12 +76,12 @@ def regist():
     return jsonify({'classname': predicts[file.filename][0], 'score': predicts[file.filename][1]})
 
 @app.route('/RCloud/<filename>')
-def RCloud(filename):
+def rcloud(filename):
     classname, score = predicts[filename]
     return render_template('RCloud.html', filename=filename, classname=classname, score=score)
 
 @app.route('/NCloud/<filename>')
-def NCloud(filename):
+def ncloud(filename):
     classname, score = predicts[filename]
     return render_template('NCloud.html', filename=filename, classname=classname, score=score)
 
