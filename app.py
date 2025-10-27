@@ -56,6 +56,7 @@ def get_list():
     return imgdata
 
 @app.route('/list')
+@app.route('/list.html')
 def list_page():
     return render_template('list.html', imglst=get_list())
 
